@@ -1,707 +1,421 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dathusai | AI & ML Portfolio</title>
+    <title>University Management System</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-    <!-- Background -->
-    <div class="background">
-        <div class="glow glow1"></div>
-        <div class="glow glow2"></div>
-        <div class="grid"></div>
-    </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
-    <!-- Navbar -->
-    <header>
-        <nav class="navbar">
+        <div class="logo">
+            🎓 <span>UniConnect</span>
+        </div>
 
-            <div class="logo">
-                <span>&lt;</span>D<span>/&gt;</span>
-            </div>
+        <nav>
+            <button class="nav-btn active" onclick="showSection('dashboard')">
+                🏠 Dashboard
+            </button>
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <button class="nav-btn" onclick="showSection('students')">
+                👨‍🎓 Students
+            </button>
 
-            <button class="menu-btn" id="menuBtn">☰</button>
+            <button class="nav-btn" onclick="showSection('courses')">
+                📚 Courses
+            </button>
 
+            <button class="nav-btn" onclick="showSection('network')">
+                🕸️ Semantic Network
+            </button>
         </nav>
-    </header>
+
+        <div class="sidebar-bottom">
+            <p>University System</p>
+            <small>Course & Student Management</small>
+        </div>
+
+    </aside>
 
 
-    <!-- HOME -->
-    <section class="hero" id="home">
+    <!-- MAIN CONTENT -->
+    <main class="main">
 
-        <div class="hero-content">
+        <!-- HEADER -->
+        <header class="header">
 
-            <p class="hello">HELLO, I'M</p>
-
-            <h1>Dathusai</h1>
-
-            <h2>
-                CSE <span>(AI & ML)</span> Student
-            </h2>
-
-            <p class="hero-text">
-                Passionate about Artificial Intelligence, Machine Learning,
-                Python and Web Development. I love learning new technologies
-                and turning ideas into real projects.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary">
-                    View Projects →
-                </a>
-
-                <a href="#contact" class="btn secondary">
-                    Contact Me
-                </a>
+            <div>
+                <h1 id="pageTitle">Dashboard</h1>
+                <p>University Course & Student Management</p>
             </div>
 
-            <div class="quick-info">
+            <div class="profile">
+                <div class="profile-icon">👤</div>
                 <div>
-                    <strong>AI/ML</strong>
-                    <small>Learning</small>
+                    <b>Administrator</b>
+                    <small>University Admin</small>
                 </div>
+            </div>
 
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section active-section">
+
+            <div class="welcome">
                 <div>
-                    <strong>Python</strong>
-                    <small>Developer</small>
-                </div>
-
-                <div>
-                    <strong>Web</strong>
-                    <small>Frontend</small>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- AI CARD -->
-       <div class="hero-card">
-
-    <div class="profile-circle profile-photo">
-        <img src="profile.jpeg" alt="Dathusai">
-    </div>
-
-    <div class="orbit orbit1"></div>
-    <div class="orbit orbit2"></div>
-
-    <div class="floating-card card1">
-        🤖 AI
-    </div>
-
-    <div class="floating-card card2">
-        🐍 Python
-    </div>
-
-    <div class="floating-card card3">
-        🌐 Web
-    </div>
-
-</div>
-</section>
-    <!-- ABOUT -->
-    <section class="section" id="about">
-
-        <div class="section-title">
-            <p>GET TO KNOW ME</p>
-            <h2>About <span>Me</span></h2>
-        </div>
-
-        <div class="about-container">
-
-            <div class="about-text">
-
-                <h3>Curious Mind. <span>Always Learning.</span></h3>
-
-                <p>
-                    I am a B.Tech Computer Science student specializing in
-                    Artificial Intelligence and Machine Learning.
-                </p>
-
-                <p>
-                    I enjoy exploring new technologies, building websites
-                    and creating Python projects. My goal is to continuously
-                    improve my technical skills and become a skilled AI/ML
-                    engineer.
-                </p>
-
-                <div class="about-details">
-
-                    <div>
-                        <strong>Name</strong>
-                        <p>Dathusai</p>
-                    </div>
-
-                    <div>
-                        <strong>Branch</strong>
-                        <p>CSE (AI & ML)</p>
-                    </div>
-
-                    <div>
-                        <strong>Interest</strong>
-                        <p>AI & ML</p>
-                    </div>
-
-                    <div>
-                        <strong>Learning</strong>
-                        <p>New Technologies</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="about-box">
-
-                <div class="code-top">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-                <pre><code>
-<span class="purple">student</span> = {
-    <span class="green">"name"</span>: <span class="orange">"Dathusai"</span>,
-    <span class="green">"branch"</span>: <span class="orange">"CSE AI & ML"</span>,
-    <span class="green">"interest"</span>: <span class="orange">"AI & ML"</span>,
-    <span class="green">"skills"</span>: [
-        <span class="orange">"Python"</span>,
-        <span class="orange">"HTML"</span>,
-        <span class="orange">"CSS"</span>
-    ],
-    <span class="green">"mindset"</span>: <span class="orange">"Always Learning"</span>
-}
-
-<span class="purple">print</span>(<span class="green">"Let's build something amazing!"</span>)
-                </code></pre>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-
-        <div class="section-title">
-            <p>WHAT I KNOW</p>
-            <h2>My <span>Skills</span></h2>
-        </div>
-
-        <div class="skills-container">
-
-            <div class="skill-card">
-                <div class="skill-icon">🐍</div>
-                <h3>Python</h3>
-                <p>Programming & Projects</p>
-                <div class="progress">
-                    <div class="progress-bar python"></div>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>HTML</h3>
-                <p>Web Structure</p>
-                <div class="progress">
-                    <div class="progress-bar html"></div>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <h3>CSS</h3>
-                <p>Design & Responsive UI</p>
-                <div class="progress">
-                    <div class="progress-bar css"></div>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-icon">🤖</div>
-                <h3>AI & ML</h3>
-                <p>Currently Learning</p>
-                <div class="progress">
-                    <div class="progress-bar aiml"></div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-
-        <div class="section-title">
-            <p>MY WORK</p>
-            <h2>Featured <span>Projects</span></h2>
-        </div>
-
-        <div class="projects-grid">
-
-            <!-- Project 1 -->
-            <div class="project-card">
-
-                <div class="project-number">01</div>
-
-                <div class="project-icon">🌐</div>
-
-                <h3>Temple Website</h3>
-
-                <p>
-                    A responsive frontend website created using HTML and CSS
-                    with multiple pages and navigation.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    View Project ↗
-                </a>
-
-            </div>
-
-
-            <!-- Project 2 -->
-            <div class="project-card">
-
-                <div class="project-number">02</div>
-
-                <div class="project-icon">💼</div>
-
-                <h3>Job Application Website</h3>
-
-                <p>
-                    A frontend job application system with login,
-                    application form and resume upload interface.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    View Project ↗
-                </a>
-
-            </div>
-
-
-            <!-- Project 3 -->
-            <div class="project-card">
-
-                <div class="project-number">03</div>
-
-                <div class="project-icon">🎓</div>
-
-                <h3>Student ERP Website</h3>
-
-                <p>
-                    Student-focused frontend ERP interface containing
-                    subjects, assignments, attendance and login pages.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    View Project ↗
-                </a>
-
-            </div>
-
-
-            <!-- Project 4 -->
-            <div class="project-card">
-
-                <div class="project-number">04</div>
-
-                <div class="project-icon">🛒</div>
-
-                <h3>E-Commerce Website</h3>
-
-                <p>
-                    A modern frontend shopping website with product cards,
-                    navigation and interactive user interface.
-                </p>
-
-                <div class="tags">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JS</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    View Project ↗
-                </a>
-
-            </div>
-
-
-            <!-- Python Project -->
-            <div class="project-card python-project">
-
-                <div class="project-number">05</div>
-
-                <div class="project-icon">📦</div>
-
-                <h3>Inventory Management</h3>
-
-                <p>
-                    Python-based system for adding, updating, deleting,
-                    searching and managing products.
-                </p>
-
-                <div class="tags">
-                    <span>Python</span>
-                    <span>OOP</span>
-                </div>
-
-                <a href="#" class="project-link">
-                    View Project ↗
-                </a>
-
-            </div>
-
-
-            <!-- Python Project -->
-           <!-- Python Project 1 -->
-<div class="project-card python-project">
-    <div class="project-number">05</div>
-    <div class="project-icon">🧮</div>
-    <h3>Age Calculator</h3>
-    <p>Python program for calculating a person's age from their date of birth.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 2 -->
-<div class="project-card python-project">
-    <div class="project-number">06</div>
-    <div class="project-icon">⏰</div>
-    <h3>Alarm Application</h3>
-    <p>A Python application that allows users to set and manage alarms.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 3 -->
-<div class="project-card python-project">
-    <div class="project-number">07</div>
-    <div class="project-icon">🧾</div>
-    <h3>Bill Calculator</h3>
-    <p>A simple Python program for calculating bills and displaying the total amount.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 4 -->
-<div class="project-card python-project">
-    <div class="project-number">08</div>
-    <div class="project-icon">📅</div>
-    <h3>Date & Time</h3>
-    <p>A Python program that works with current date and time information.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 5 -->
-<div class="project-card python-project">
-    <div class="project-number">09</div>
-    <div class="project-icon">👤</div>
-    <h3>Face Detection</h3>
-    <p>A computer vision project that detects faces using a camera.</p>
-    <div class="tags">
-        <span>Python</span>
-        <span>OpenCV</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 6 -->
-<div class="project-card python-project">
-    <div class="project-number">10</div>
-    <div class="project-icon">🎯</div>
-    <h3>Guessing Game</h3>
-    <p>A simple Python game where the user tries to guess the correct number.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 7 -->
-<div class="project-card python-project">
-    <div class="project-number">11</div>
-    <div class="project-icon">✋</div>
-    <h3>Hand Landmark Detection</h3>
-    <p>A computer vision project for detecting hand landmarks using a camera.</p>
-    <div class="tags">
-        <span>Python</span>
-        <span>AI</span>
-        <span>Computer Vision</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 8 -->
-<div class="project-card python-project">
-    <div class="project-number">12</div>
-    <div class="project-icon">💻</div>
-    <h3>S Program</h3>
-    <p>A Python practice project demonstrating programming concepts and logic.</p>
-    <div class="tags">
-        <span>Python</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-
-<!-- Python Project 9 -->
-<div class="project-card python-project">
-    <div class="project-number">13</div>
-    <div class="project-icon">🔊</div>
-    <h3>Volume Control</h3>
-    <p>Control computer volume using hand gestures and camera-based detection.</p>
-    <div class="tags">
-        <span>Python</span>
-        <span>OpenCV</span>
-        <span>AI</span>
-    </div>
-    <a href="#" class="project-link">View Project ↗</a>
-</div>
-
-    </section>
-
-
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-
-        <div class="section-title">
-            <p>MY JOURNEY</p>
-            <h2>Education & <span>Goals</span></h2>
-        </div>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <span>Currently</span>
-
-                    <h3>B.Tech – CSE (AI & ML)</h3>
-
-                    <h4>Sandip University, Nashik</h4>
-
+                    <h2>Welcome to UniConnect 👋</h2>
                     <p>
-                        Building a strong foundation in computer science,
-                        programming, Artificial Intelligence and Machine Learning.
+                        Manage students, courses and relationships
+                        using a semantic network.
                     </p>
+                </div>
 
+                <button onclick="showSection('network')">
+                    View Network →
+                </button>
+            </div>
+
+
+            <!-- STAT CARDS -->
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">👨‍🎓</div>
+                    <div>
+                        <p>Total Students</p>
+                        <h2 id="studentCount">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">📚</div>
+                    <div>
+                        <p>Total Courses</p>
+                        <h2 id="courseCount">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">🏫</div>
+                    <div>
+                        <p>Departments</p>
+                        <h2 id="departmentCount">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">🔗</div>
+                    <div>
+                        <p>Relationships</p>
+                        <h2 id="relationshipCount">0</h2>
+                    </div>
                 </div>
 
             </div>
 
 
-            <div class="timeline-item">
+            <!-- DASHBOARD GRID -->
+            <div class="dashboard-grid">
 
-                <div class="timeline-dot"></div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Course Enrollment</h3>
+                    </div>
 
-                <div class="timeline-content">
+                    <canvas id="courseChart"></canvas>
+                </div>
 
-                    <span>Future Goal</span>
 
-                    <h3>Aspiring AI/ML Engineer</h3>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Recent Students</h3>
+                    </div>
 
-                    <p>
-                        Learn advanced AI and Machine Learning technologies
-                        and build useful real-world applications.
-                    </p>
-
+                    <div id="recentStudents"></div>
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CONTACT -->
-    <section class="section contact-section" id="contact">
+        <!-- STUDENTS -->
+        <section id="students" class="section">
 
-        <div class="section-title">
-            <p>LET'S CONNECT</p>
-            <h2>Contact <span>Me</span></h2>
-        </div>
-
-        <div class="contact-container">
-
-            <div class="contact-info">
-
-                <h3>Let's build something <span>great</span> together.</h3>
-
-                <p>
-                    Have a project idea, collaboration opportunity or just
-                    want to say hello? Feel free to contact me.
-                </p>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <small>Email</small>
-                        <a href="mailto:yourmail@gmail.com">
-                            yourmail@gmail.com
-                        </a>
-                    </div>
+            <div class="section-heading">
+                <div>
+                    <h2>Student Management</h2>
+                    <p>Add and manage university students.</p>
                 </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <small>Phone</small>
-                        <a href="tel:+919876543210">
-                            +91 XXXXX XXXXX
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <small>Location</small>
-                        <p>India</p>
-                    </div>
-                </div>
-
-                <div class="social-links">
-
-                    <a href="#" title="GitHub">GitHub</a>
-
-                    <a href="#" title="LinkedIn">LinkedIn</a>
-
-                </div>
-
+                <button class="primary-btn" onclick="openStudentModal()">
+                    + Add Student
+                </button>
             </div>
 
 
-            <form class="contact-form" id="contactForm">
-
+            <div class="search-box">
+                🔍
                 <input
                     type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required
+                    id="studentSearch"
+                    placeholder="Search students..."
+                    onkeyup="displayStudents()"
                 >
+            </div>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required
-                >
 
+            <div class="table-panel">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Student</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Courses</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- COURSES -->
+        <section id="courses" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Course Management</h2>
+                    <p>Manage university courses and faculty.</p>
+                </div>
+
+                <button class="primary-btn" onclick="openCourseModal()">
+                    + Add Course
+                </button>
+
+            </div>
+
+
+            <div class="search-box">
+                🔍
                 <input
                     type="text"
-                    id="location"
-                    placeholder="location"
-                    required
+                    id="courseSearch"
+                    placeholder="Search courses..."
+                    onkeyup="displayCourses()"
                 >
+            </div>
 
-                <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Your Message"
-                    required
-                ></textarea>
 
-                <button type="submit" class="btn primary">
-                    Send Message 🚀
+            <div class="course-grid" id="courseGrid"></div>
+
+        </section>
+
+
+        <!-- SEMANTIC NETWORK -->
+        <section id="network" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Semantic Network</h2>
+                    <p>
+                        Visual representation of relationships between
+                        students, courses, faculty and departments.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="network-info">
+
+                <div>
+                    <span class="legend student-node"></span>
+                    Student
+                </div>
+
+                <div>
+                    <span class="legend course-node"></span>
+                    Course
+                </div>
+
+                <div>
+                    <span class="legend faculty-node"></span>
+                    Faculty
+                </div>
+
+                <div>
+                    <span class="legend department-node"></span>
+                    Department
+                </div>
+
+            </div>
+
+
+            <div class="network">
+
+                <svg id="networkSvg"></svg>
+
+                <div id="networkNodes"></div>
+
+            </div>
+
+
+            <div class="relationship-box">
+
+                <h3>Semantic Relationships</h3>
+
+                <div class="relationship-list">
+
+                    <div>
+                        <b>Student</b>
+                        <span>→ enrolled in →</span>
+                        <b>Course</b>
+                    </div>
+
+                    <div>
+                        <b>Course</b>
+                        <span>→ taught by →</span>
+                        <b>Faculty</b>
+                    </div>
+
+                    <div>
+                        <b>Course</b>
+                        <span>→ belongs to →</span>
+                        <b>Department</b>
+                    </div>
+
+                    <div>
+                        <b>Student</b>
+                        <span>→ belongs to →</span>
+                        <b>Department</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- STUDENT MODAL -->
+    <div id="studentModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeStudentModal()">×</span>
+
+            <h2>Add Student</h2>
+
+            <form onsubmit="addStudent(event)">
+
+                <label>Student ID</label>
+                <input id="studentId" required>
+
+                <label>Student Name</label>
+                <input id="studentName" required>
+
+                <label>Email</label>
+                <input id="studentEmail" type="email" required>
+
+                <label>Department</label>
+
+                <select id="studentDepartment" required>
+                    <option value="">Select Department</option>
+                    <option>Computer Science</option>
+                    <option>Electronics</option>
+                    <option>Mechanical</option>
+                    <option>Business Administration</option>
+                    <option>Mathematics</option>
+                </select>
+
+                <label>Course</label>
+
+                <select id="studentCourse" required></select>
+
+                <button class="primary-btn" type="submit">
+                    Add Student
                 </button>
 
             </form>
 
         </div>
 
-    </section>
+    </div>
 
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- COURSE MODAL -->
+    <div id="courseModal" class="modal">
 
-        <div class="footer-logo">
-            Dathusai<span>.</span>
+        <div class="modal-content">
+
+            <span class="close" onclick="closeCourseModal()">×</span>
+
+            <h2>Add Course</h2>
+
+            <form onsubmit="addCourse(event)">
+
+                <label>Course ID</label>
+                <input id="courseId" required>
+
+                <label>Course Name</label>
+                <input id="courseName" required>
+
+                <label>Credits</label>
+                <input id="courseCredits" type="number" min="1" max="10" required>
+
+                <label>Faculty</label>
+                <input id="courseFaculty" required>
+
+                <label>Department</label>
+
+                <select id="courseDepartment" required>
+                    <option value="">Select Department</option>
+                    <option>Computer Science</option>
+                    <option>Electronics</option>
+                    <option>Mechanical</option>
+                    <option>Business Administration</option>
+                    <option>Mathematics</option>
+                </select>
+
+                <button class="primary-btn" type="submit">
+                    Add Course
+                </button>
+
+            </form>
+
         </div>
 
-        <p>
-            CSE (AI & ML) Student | Always Learning | Always Building
-        </p>
-
-        <div class="footer-line"></div>
-
-        <p class="copyright">
-            © <span id="year"></span> Dathusai. All Rights Reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- Back To Top -->
-    <button id="topBtn" class="top-btn">↑</button>
+    </div>
 
 
     <script src="script.js"></script>
 
 </body>
 </html>
+```
